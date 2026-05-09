@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>عيد ميلاد سكينة</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;1000&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Cairo", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(255, 213, 122, 0.22), transparent 35%),
+        radial-gradient(circle at bottom, rgba(26, 120, 91, 0.22), transparent 35%),
+        linear-gradient(135deg, #07130f, #101006, #050505);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .page {
+      padding: 35px 18px;
+      min-height: 100vh;
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+      padding: 70px 25px;
+      border-radius: 35px;
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.72)),
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0 2px, transparent 2px 18px);
+      border: 1px solid rgba(255, 219, 135, 0.28);
+      box-shadow: 0 0 45px rgba(255, 198, 90, 0.18);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 50px;
+      color: #ffe7a6;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 219, 135, 0.35);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 80px);
+      color: #ffe7a6;
+      text-shadow: 0 0 22px rgba(255, 206, 92, 0.55);
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: auto;
+      font-size: 22px;
+      line-height: 2;
+      color: #f6e8c8;
+    }
+
+    .name {
+      color: #ffd166;
+      font-weight: 1000;
+    }
+
+    section {
+      max-width: 1150px;
+      margin: 60px auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 40px;
+      color: #ffd166;
+      margin-bottom: 30px;
+      text-shadow: 0 0 16px rgba(255, 209, 102, 0.45);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      min-height: 330px;
+      padding: 25px;
+      border-radius: 28px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top, rgba(255, 215, 130, 0.18), transparent 45%),
+        linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255, 219, 135, 0.28);
+      box-shadow: 0 0 28px rgba(255, 198, 90, 0.11);
+      transition: 0.35s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 0 40px rgba(255, 198, 90, 0.28);
+    }
+
+    .card::before {
+      content: "☪";
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      font-size: 70px;
+      color: rgba(255, 214, 120, 0.08);
+    }
+
+    .icon {
+      width: 82px;
+      height: 82px;
+      margin: auto;
+      margin-bottom: 18px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 38px;
+      background: rgba(255, 209, 102, 0.13);
+      border: 1px solid rgba(255, 219, 135, 0.35);
+      box-shadow: inset 0 0 25px rgba(255, 209, 102, 0.08);
+    }
+
+    .card h3 {
+      text-align: center;
+      color: #ffe7a6;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .quote {
+      text-align: center;
+      color: #f6e8c8;
+      font-size: 18px;
+      line-height: 2;
+    }
+
+    .note {
+      margin-top: 12px;
+      text-align: center;
+      color: #cfc1a0;
+      font-size: 14px;
+    }
+
+    .love-box {
+      text-align: center;
+      padding: 45px 25px;
+      border-radius: 32px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255, 219, 135, 0.25);
+      box-shadow: 0 0 35px rgba(255, 198, 90, 0.12);
+    }
+
+    .love-box h2 {
+      color: #ffe7a6;
+      font-size: 38px;
+      margin-bottom: 18px;
+    }
+
+    .love-box p {
+      color: #f6e8c8;
+      font-size: 21px;
+      line-height: 2;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      border: none;
+      padding: 16px 34px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 1000;
+      color: #1d1002;
+      background: linear-gradient(135deg, #ffd166, #f79d25);
+      box-shadow: 0 0 28px rgba(255, 198, 90, 0.45);
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 0 45px rgba(255, 198, 90, 0.7);
+    }
+
+    .hidden-message {
+      margin-top: 28px;
+      display: none;
+      font-size: clamp(32px, 6vw, 70px);
+      color: #ffe7a6;
+      font-weight: 1000;
+      text-shadow: 0 0 22px rgba(255, 209, 102, 0.75);
+      animation: pop 0.8s ease forwards;
+    }
+
+    @keyframes pop {
+      from {
+        opacity: 0;
+        transform: scale(0.5) translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .heart {
+      position: fixed;
+      top: -20px;
+      font-size: 22px;
+      animation: fall 4s linear forwards;
+      z-index: 999;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 45px 18px;
+      }
+
+      .hero p {
+        font-size: 19px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <div class="hero">
+      <div class="badge">🌙 عيد ميلاد بطابع عربي إسلامي ✨</div>
+      <h1>كل سنة وأنتِ طيبة يا سكينة</h1>
+      <p>
+        صفحة بسيطة ومميزة معمولة مخصوص ليكي يا <span class="name">سكينة</span>،
+        فيها لمسة هادئة، أقوال جميلة، وزخرفة عربية تليق بيومك الجميل.
+        ربنا يجعل سنتك الجديدة مليانة فرحة، راحة، ونجاح 🤍
+      </p>
+    </div>
+
+    <section>
+      <h2 class="section-title">🌟 أقوال منسوبة لبعض الصحابة 🌟</h2>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon">🕌</div>
+          <h3>أبو بكر الصديق</h3>
+          <p class="quote">“إن أحسنت فأعينوني، وإن أسأت فقوّموني.”</p>
+          <div class="note">رضي الله عنه</div>
+        </div>
+
+        <div class="card">
+          <div class="icon">⚔️</div>
+          <h3>عمر بن الخطاب</h3>
+          <p class="quote">“حاسبوا أنفسكم قبل أن تُحاسَبوا.”</p>
+          <div class="note">رضي الله عنه</div>
+        </div>
+
+        <div class="card">
+          <div class="icon">📖</div>
+          <h3>عثمان بن عفان</h3>
+          <p class="quote">“لو طهرت قلوبنا ما شبعت من كلام الله.”</p>
+          <div class="note">رضي الله عنه</div>
+        </div>
+
+        <div class="card">
+          <div class="icon">🪶</div>
+          <h3>علي بن أبي طالب</h3>
+          <p class="quote">“قيمة كل امرئ ما يحسنه.”</p>
+          <div class="note">رضي الله عنه</div>
+        </div>
+
+        <div class="card">
+          <div class="icon">🛡️</div>
+          <h3>خالد بن الوليد</h3>
+          <p class="quote">“فلا نامت أعين الجبناء.”</p>
+          <div class="note">رضي الله عنه</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="love-box">
+        <h2>🎁 مفاجأة صغيرة 🎁</h2>
+        <p>
+          اضغطي على الزرار وشوفي الجملة اللي مستخبية ليكي يا سكينة 💛✨
+        </p>
+
+        <button class="btn" onclick="showLove()">اضغطي هنا 💌</button>
+
+        <div class="hidden-message" id="loveMessage">
+          أنا لسه بحبك يا سكينة 💛🥹✨
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    function showLove() {
+      const message = document.getElementById("loveMessage");
+      message.style.display = "block";
+
+      for (let i = 0; i < 70; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.textContent = ["💛", "✨", "🤍", "🌙", "🎉", "🥹"][Math.floor(Math.random() * 6)];
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = 2.5 + Math.random() * 2.5 + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 5000);
+      }
+    }
+  </script>
+</body>
+</html>
